@@ -16,8 +16,8 @@ export class HomeComponent implements OnInit{
     constructor(private titleService: Title,private projectsService: ProjectsService) {
         this.titleService.setTitle('Sherri Wang - Home');
     }
+    //增加 OnInit
     ngOnInit(): void {
         this.featuredProject = this.projectsService.GetProjectById(0);    }
-    //增加 OnInit
    
 }
