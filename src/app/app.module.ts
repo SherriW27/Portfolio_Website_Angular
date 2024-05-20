@@ -15,31 +15,34 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { ProjectModalComponent } from './project-modal/project-modal.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    NavbarComponent,
-    HomeComponent,
-    PortfolioComponent,
-    ContactComponent,
-    ResumeComponent,
-    ProjectCardComponent,
-    ProjectModalComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-      BrowserAnimationsModule,
-    //   forRoot()提供全局配置和依賴注入。這樣可以確保模組和其服務在應用程序中是唯一的並且是全局配置的。
-      ModalModule.forRoot(),
-      CarouselModule.forRoot(),
-      CollapseModule.forRoot(),
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        NavbarComponent,
+        HomeComponent,
+        PortfolioComponent,
+        ContactComponent,
+        ResumeComponent,
+        ProjectCardComponent,
+        ProjectModalComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        //   forRoot()提供全局配置和依賴注入。這樣可以確保模組和其服務在應用程序中是唯一的並且是全局配置的。
+        ModalModule.forRoot(),
+        CarouselModule.forRoot(),
+        CollapseModule.forRoot(),
+        AccordionModule.forRoot(),
+        FormsModule,
+
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

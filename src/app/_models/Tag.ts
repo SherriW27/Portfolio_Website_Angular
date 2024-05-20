@@ -1,5 +1,5 @@
 export class Tag {
-    static readonly Angular = new Tag('Angular', 'red');
+    static readonly ANGULAR = new Tag('Angular', 'red');
     static readonly REACT = new Tag('React', 'orange')
     static readonly TYPESCRIPT = new Tag('Typescript', 'darked');
     static readonly JAVASCRIPT = new Tag('Javascript', 'blue');

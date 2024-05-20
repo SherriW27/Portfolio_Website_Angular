@@ -7,8 +7,8 @@ import { Tag } from '../_models/Tag';
 export class ProjectsService {
 
     projects: Project[] = [
-        { id: 0, name: "Sample Python Project", pictures: ["../../assets/image1.png", "../../assets/image2.png", "../../assets/image3.png"], projectLink: "//www.github.com", summary: "Python project that analyzes stock market data.", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", tags: [Tag.Angular] },
-        { id: 1, name: "Sample Angular App", pictures: ["../../assets/image1.png", "../../assets/image2.png", "../../assets/image3.png"], projectLink: "//www.github.com", summary: "Fullstack web app developed using Angular and Node.JS", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", tags: [Tag.Angular, Tag.TYPESCRIPT, Tag.NODEJS] },
+        { id: 0, name: "Sample Python Project", pictures: ["../../assets/image1.png", "../../assets/image2.png", "../../assets/image3.png"], projectLink: "//www.github.com", summary: "Python project that analyzes stock market data.", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", tags: [Tag.ANGULAR] },
+        { id: 1, name: "Sample Angular App", pictures: ["../../assets/image1.png", "../../assets/image2.png", "../../assets/image3.png"], projectLink: "//www.github.com", summary: "Fullstack web app developed using Angular and Node.JS", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", tags: [Tag.ANGULAR, Tag.TYPESCRIPT, Tag.NODEJS] },
         { id: 2, name: "Sample .Net App", pictures: ["../../assets/image1.png", "../../assets/image2.png", "../../assets/image3.png"], projectLink: "//www.github.com", summary: "Fullstack web app developed using React and ASP.NET", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", tags: [Tag.REACT] },
         { id: 3, name: "Web API Project", pictures: ["../../assets/image1.png", "../../assets/image2.png", "../../assets/image3.png"], projectLink: "//www.github.com", summary: "Web API Project that was developed for a class project.", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", tags: [Tag.REACT] },
         { id: 4, name: "Chrome Extension", pictures: ["../../assets/image1.png", "../../assets/image2.png", "../../assets/image3.png"], projectLink: "//www.github.com", summary: "Developed a chrome extension that tracks the prices of furniture.", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", tags: [Tag.JAVASCRIPT] },
@@ -28,23 +28,23 @@ export class ProjectsService {
         }
         return project;
     }
-    // GetProjectsByFilter(filterTags: Tag[]): {
-    //     let filteredProjects: Projects[] = [];
+    GetProjectsByFilter(filterTags: Tag[]) {
+        let filteredProjects: Project[] = [];
 
-    //     this.projects.forEach(project => {
-    //         let foundAll = true;
+        this.projects.forEach(project => {
+            let foundAll = true;
 
-    //         filterTags.forEach(filterTag => {
-    //             if (!project.tags.includes(filterTag)) {
-    //                 foundAll = false;
-    //             }
-    //         });
+            filterTags.forEach(filterTag => {
+                if (!project.tags.includes(filterTag)) {
+                    foundAll = false;
+                }
+            });
 
-    //         if (foundAll) {
-    //             filteredProjects.push(project);
-    //         }
-    //     });
+            if (foundAll) {
+                filteredProjects.push(project);
+            }
+        });
 
-    //     return filteredProjects;
-    // }
+        return filteredProjects;
+    }
 }
