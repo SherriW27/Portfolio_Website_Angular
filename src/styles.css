@@ -1,14 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
-.container {
-    max-width: 1140px;
+.bg{
+ background: url("../src/assets/bg.jpg");
+  background-repeat: repeat;
+   min-height: 100vh;
 }
-.tag{
-    padding: 0 20px;
-height: 30px;
-width: fit-content;
-font-size: 14px;
-line-height: 30px;
-border-radius: 25px;
-background-color: blue;
-color: white;
+.container {
+  max-width: 1140px;
+ 
+}
+.tag {
+  padding: 0 20px;
+  height: 30px;
+  width: fit-content;
+  font-size: 14px;
+  line-height: 30px;
+  border-radius: 25px;
+  background-color: blue;
+  color: white;
+}
+.nav-link a {
+    text-decoration: none; /* Remove underline from links */
+}
+
+ a:hover {
+    text-decoration: underline; /* Optionally, add underline on hover */
 }
